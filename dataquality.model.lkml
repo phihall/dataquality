@@ -14,3 +14,5 @@ persist_with: dataquality_default_datagroup
 explore: t_zagent_anr {}
 
 explore: t_zagent_device_info {}
+
+explore: data_qaulity_metrics {}

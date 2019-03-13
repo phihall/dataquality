@@ -11,6 +11,18 @@ view: data_qaulity_metrics {
       allowed_value: {
         value: "t_zagent_anr"
       }
+      allowed_value: {
+        value: "t_zagent_battery"
+      }
+      allowed_value: {
+        value: "t_zagent_applications"
+      }
+      allowed_value: {
+        value: "t_zagent_scanner"
+      }
+      allowed_value: {
+        value: "t_zagent_traffic"
+      }
     }
 
     parameter: column_name {
@@ -61,6 +73,10 @@ view: data_qaulity_metrics {
       sql: BYTE_LENGTH(${TABLE}.{{ column_name._parameter_value }}) ;;
     }
 
+  dimension: column_characters {
+    type: number
+    sql: CHARACTER_LENGTH(${TABLE}.{{ column_name._parameter_value}}) ;;
+  }
     dimension_group: raised {
       type: time
       timeframes: [
@@ -88,4 +104,32 @@ view: data_qaulity_metrics {
       drill_fields: [column_members]
     }
 
+    measure: column_list {
+      type: list
+      list_field: column_members
+
+    }
+
+    measure: column_average {
+      type: average
+      sql: ${TABLE}.{{ column_name._parameter_value }} ;;
+    }
+  measure: column_min_number {
+    type: min
+    sql: ${TABLE}.{{ column_name._parameter_value }} ;;
+  }
+
+  measure: column_max_number {
+    type: max
+    sql: ${TABLE}.{{ column_name._parameter_value }} ;;
+  }
+  measure: column_min_string {
+    type: string
+    sql: MIN(${TABLE}.{{ column_name._parameter_value }}) ;;
+  }
+
+  measure: column_max_string {
+    type: string
+        sql: MAX(${TABLE}.{{ column_name._parameter_value }}) ;;
+  }
      }

@@ -2334,4 +2334,9 @@ view: data_qaulity_metrics {
     type: string
         sql: MAX(${TABLE}.{{ column_name._parameter_value }}) ;;
   }
+
+  measure: sn_reporting {
+    type: count_distinct
+    sql: ${TABLE}._sn ;;
+  }
      }

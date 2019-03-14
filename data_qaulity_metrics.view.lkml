@@ -2300,6 +2300,7 @@ view: data_qaulity_metrics {
     timeframes: [
       raw,
       time,
+      hour,
       date,
       week,
       month,

@@ -2295,6 +2295,21 @@ view: data_qaulity_metrics {
       sql: TIMESTAMP_MILLIS(SAFE_CAST(${TABLE}._r as INT64)) ;;
     }
 
+  dimension_group: error_timestamp {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.timestamp ;;
+  }
+
+
     measure: column_row_count {
       type: count
     }

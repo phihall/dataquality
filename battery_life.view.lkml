@@ -38,7 +38,7 @@ view: battery_life {
     sql: ${TABLE}.c_battery_raised_time ;;
   }
 
-  dimension: c_battery_avg_battery_level_1 {
+  measure: c_battery_avg_battery_level_1 {
     type: number
     sql: ${TABLE}.c_battery_avg_battery_level_1 ;;
   }

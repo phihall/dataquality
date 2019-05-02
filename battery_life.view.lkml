@@ -27,11 +27,4 @@ GROUP BY 1,2
     type: number
     sql: ${TABLE}.c_battery_avg_battery_level_1 ;;
   }
-
-  set: detail {
-    fields: [
-      c_battery_raised_time,
-      c_battery_avg_battery_level_1
-    ]
-  }
 }

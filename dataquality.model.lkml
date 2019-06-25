@@ -17,4 +17,7 @@ explore: t_zagent_device_info {}
 
 # explore: data_quality_metrics {}
 
-explore: zds_vs_b2m {}
+explore: zds_vs_b2m {
+  persist_with: dataquality_default_datagroup
+  group_label: "data_quality"
+}

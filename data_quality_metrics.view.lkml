@@ -1,4 +1,4 @@
-view: data_qaulity_metrics {
+view: data_quality_metrics {
 
     sql_table_name: `es-s2dl-core-p.emc.{{table_name._parameter_value}}`
       ;;
